@@ -7,14 +7,13 @@ import { Humidity } from './humidity';
 })
 export class WeatherServiceService {
 
-  apiURL = 'http://api.openweathermap.org/data/2.5/weather?q='
-  apiURL2 = '&units=imperial&appid=dfb95da42784692600d9d0adb78a140e';
+  api1 = 'http://api.openweathermap.org/data/2.5/weather?q='
+  api2 = '&units=imperial&appid=';
 
   constructor(private httpClient: HttpClient) { }
 
   public getHumidity() {
-    console.log(this.apiURL + localStorage.getItem('city') + this.apiURL2)
-    return this.httpClient.get(this.apiURL + localStorage.getItem('city') + this.apiURL2);
+    return this.httpClient.get(this.api1 + localStorage.getItem('city') + this.api2);
   }
 
 }
