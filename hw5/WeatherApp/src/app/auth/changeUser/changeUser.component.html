@@ -1,0 +1,9 @@
+<mat-card>
+  <form (submit)="onEditUser(editUserForm)" #editUserForm="ngForm" *ngIf="user">
+    <mat-form-field>
+      <input matInput name="city" [(ngModel)]="user.city" type="text" placeholder="City" #cityInput="ngModel" required>
+      <mat-error *ngIf="cityInput.invalid">Please enter a valid city name</mat-error>
+    </mat-form-field>
+    <button mat-raised-button color="accent" type="submit">Edit profile</button>
+  </form>
+</mat-card>

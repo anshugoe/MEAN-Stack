@@ -1,0 +1,7 @@
+<mat-accordion *ngIf="userIsAuthenticated && user">
+    <p>Welcome back, {{user.name}}!</p>
+    <button mat-button color="primary" (click)="generateTemp()">Show temp</button>
+</mat-accordion>
+<br>
+<p *ngIf="userIsAuthenticated && temperature!=''">Temperature in {{cityName}} is {{temperature}}</p>
+<p *ngIf="!userIsAuthenticated">You have to login first!</p>

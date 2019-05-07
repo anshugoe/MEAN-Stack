@@ -1,0 +1,17 @@
+<mat-toolbar color="primary">
+<span>
+  <a routerLink="/">WeatherApp</a>
+</span>
+<span class="spacer"></span>
+<ul>
+  <li *ngIf="userIsAuthenticated">
+    <button mat-button routerLink="/editProfile"> Edit profile </button>
+  </li>
+  <li *ngIf="userIsAuthenticated">
+    <button mat-button (click)="onLogout()">Logout</button>
+  </li>
+  <li *ngIf="!userIsAuthenticated">
+    <a mat-button href="http://localhost:3000/auth/google">Login</a>
+  </li>
+</ul>
+</mat-toolbar>
